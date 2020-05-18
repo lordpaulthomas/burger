@@ -1,3 +1,4 @@
 $(".burger").on("click", function(){
-  console.log("hello");
+  const id = $this[0].id;
+  
 })

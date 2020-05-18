@@ -2,15 +2,13 @@
 
 {{#each burger_data}}
 {{#if devoured}}
-<ul class="burger" style="float: right;">
-  <li>{{burger}}</li>
-  <li>Is devoured {{devoured}}</li>
-</ul>
+<div id={{id}} class="burger" style="float: right;">
+  <h4>{{burger}}</h4>
+</div>
 {{else}}
-<ul class="burger" style="float: left;">
-  <li>{{burger}}</li>
-  <li>Is devoured {{devoured}}</li>
-</ul>
+<div id={{id}} class="burger" style="float: left;">
+  <h4>{{burger}}</h4>
+</div>
 {{/if}}
 {{/each}}
 
