@@ -1,1 +1,1 @@
-INSERT INTO burgers (burger, devoured) VALUES ("Double Double", false), ("Whopper", false),("Animal Style", true);
+INSERT INTO burgers (burger, devoured) VALUES ("Double Double", false), ("Whopper", false),("Animal Style", false);
