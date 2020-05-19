@@ -1,8 +1,4 @@
 .burger{
-  /* height: 5em;
-  width: 5em;
-  padding: 1em;
-  border: black solid 3px; */
   background: url(burger.jpg);
   background-position: center;
   background-size: cover;
@@ -21,4 +17,7 @@ h1{
   font-size: 3em;
   text-align: center;
   padding-bottom: 1em;
+}
+#burgers{
+  background-color: aqua;
 }

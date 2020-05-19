@@ -1,14 +1,21 @@
 <h1>Burgers!!</h1>
-
-{{#each burger_data}}
-{{#if devoured}}
-<div id={{id}} devoured={{devoured}} class="burger" style="float: right;">
-  <h4>{{burger}}</h4>
+<div id="burgers">
+  {{#each burger_data}}
+  {{#if devoured}}
+  <div id="not-eaten">
+    <div id={{id}} devoured={{devoured}} class="burger" style="float: right;">
+      <h4>{{burger}}</h4>
+    </div>
+  </div>
+  {{else}}
+  <div id={{id}} devoured={{devoured}} class="burger" style="float: left;">
+    <h4>{{burger}}</h4>
+  </div>
+  {{/if}}
+  {{/each}}
 </div>
-{{else}}
-<div id={{id}} devoured={{devoured}} class="burger" style="float: left;">
-  <h4>{{burger}}</h4>
-</div>
-{{/if}}
-{{/each}}
-
+<form>
+  <label for="burgerForm"></label>Add a burger<br>
+  <input type="text" id="burgerForm" name="burgerForm">
+  <button id="submit">Add</button><br>
+</form>

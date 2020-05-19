@@ -34,3 +34,22 @@ $('.burger').on('click', function () {
     }
   }
 });
+
+$("#submit").on("click", function(event){
+  event.preventDefault()
+  console.log($("#burgerForm").val().trim());
+  let newBurger = {
+    burger: $("#burgerForm").val().trim(),
+    devoured: false
+  }
+  console.log(newBurger);
+  $.ajax("/burgers", {
+    type: "POST",
+    data: newBurger
+  }).then(
+    function(){
+      console.log("new burger created");
+      location.reload();
+    }
+  )
+})

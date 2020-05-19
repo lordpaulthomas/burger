@@ -1,5 +1,16 @@
 var connection = require("./connection.js");
 
+
+function printQuestionMarks(num) {
+  var arr = [];
+
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
+
+  return arr.toString();
+}
+
 function objToSql(ob) {
   var arr = [];
 
@@ -31,6 +42,26 @@ var orm = {
       }
       cb(result);
     });
+  },
+  create: function(table, cols, vals, cb){
+    let queryString = "INSERT INTO " + table;
+    console.log(vals[1] == 'false')
+    vals[1] = false;
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
+
+    // console.log(queryString, vals);
+    
+    connection.query(queryString, vals, function(err, res){
+      if(err){
+        throw err;
+      }
+      cb(res);
+    })
   },
   update: function(table, objColVals, condition, cb){
     let queryString = "UPDATE " + table;

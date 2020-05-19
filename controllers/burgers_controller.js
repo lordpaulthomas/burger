@@ -19,6 +19,12 @@ router.put("/:id", function(req, res){
     }
     res.status(200).end();
   })
-})
+});
+
+router.post("/burgers", function(req, res){
+  burger.create(["burger", "devoured"], [req.body.burger, req.body.devoured], function(result){
+    res.json({ id: res.insertId });
+  });
+});
 
 module.exports = router;
