@@ -8,9 +8,7 @@ router.get("/", function(req, res){
 });
 
 router.put("/:id", function(req, res){
-  console.log(req.body);
   var condition = "id = " + req.params.id;
-  console.log("condition - ", condition);
   burger.update({
     devoured: req.body.devoured
   },

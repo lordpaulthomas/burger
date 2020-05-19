@@ -1,1 +1,1 @@
-INSERT INTO burgers (burger, devoured) VALUES ("Double Double", false), ("Whopper", false),("Animal Style", false);
+INSERT INTO burgers (burger, devoured) VALUES ("Big Mac", false), ("Whopper", false),("Shack Burger", false);

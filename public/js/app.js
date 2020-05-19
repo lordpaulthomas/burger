@@ -1,7 +1,7 @@
 $('.burger').on('click', function () {
   const id = $(this)[0].id;
   const eat = $(this)[0].attributes.devoured.value;
-  console.log(id, eat  === '0');
+
   if (eat === '0') {
     let eat = confirm('Eat the burger?');
     var eatState = {
@@ -19,7 +19,6 @@ $('.burger').on('click', function () {
     }
   }
   if(eat === "1"){
-    console.log(eat);
     var eatState = {
       devoured: false
     }
