@@ -18,6 +18,11 @@ h1{
   text-align: center;
   padding-bottom: 1em;
 }
-#burgers{
-  background-color: aqua;
+.burgers{
+  width: 100%;
+  height: 16em;
+  /* border: yellow solid 2px; */
+}
+form{
+  text-align: center;
 }
