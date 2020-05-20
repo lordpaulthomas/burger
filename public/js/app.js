@@ -18,38 +18,47 @@ $('.burger').on('click', function () {
       });
     }
   }
-  if(eat === "1"){
+  if (eat === '1') {
     var eatState = {
-      devoured: false
-    }
+      devoured: false,
+    };
     let more = confirm('Make another?');
-    if(more){
+    if (more) {
       $.ajax('/' + id, {
         type: 'PUT',
-        data: eatState
-      }).then(function(){
+        data: eatState,
+      }).then(function () {
         console.log('updated');
         location.reload();
-      })
+      });
     }
   }
 });
 
-$("#submit").on("click", function(event){
-  event.preventDefault()
-  console.log($("#burgerForm").val().trim());
+$('#submit').on('click', function (event) {
+  event.preventDefault();
   let newBurger = {
-    burger: $("#burgerForm").val().trim(),
-    devoured: false
-  }
-  console.log(newBurger);
-  $.ajax("/burgers", {
-    type: "POST",
-    data: newBurger
-  }).then(
-    function(){
-      console.log("new burger created");
+    burger: $('#burgerForm').val().trim(),
+    devoured: false,
+  };
+  $.ajax('/burgers', {
+    type: 'POST',
+    data: newBurger,
+  }).then(function () {
+    console.log('new burger created');
+    location.reload();
+  });
+});
+
+$('.delete').on('click', function () {
+  const id = $(this)[0].id;
+  var del = confirm('Delete burger?');
+  if (del) {
+    $.ajax('/burgers/' + id, {
+      type: 'DELETE',
+    }).then(function () {
+      console.log('deleted burger ', id);
       location.reload();
-    }
-  )
-})
+    });
+  }
+});
