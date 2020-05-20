@@ -1,3 +1,9 @@
+#main{
+  border: black solid 7px;
+  background: plum;
+  height: 100vh;
+  width: 100vw;
+}
 .burger{
   background: url(burger.jpg);
   background-position: center;
@@ -11,9 +17,9 @@ h4{
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: auto;
   text-align: center;
-
 }
 h1{
+
   font-size: 3em;
   text-align: center;
   padding-bottom: 1em;
@@ -25,4 +31,8 @@ h1{
 }
 form{
   text-align: center;
+  padding-bottom: 2em;
+}
+#eaten{
+  width: 50%;
 }
