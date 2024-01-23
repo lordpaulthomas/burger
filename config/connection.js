@@ -23,7 +23,7 @@ connection.connect(function(err){
   console.log("connected as id " + connection.threadId);
 });
 
-fs.readFile('/Users/paulthomas/Documents/programming/burger/backup.sql', 'utf-8', (err, data) => {
+fs.readFile('./backup.sql', 'utf-8', (err, data) => {
   if (err) throw err;
 
   const sqlCommands = data.split(';').map(command => command.trim()).filter(command => command);
