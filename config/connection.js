@@ -1,4 +1,5 @@
 var mysql = require("mysql");
+var fs = require("fs");
 
 var connection;
 if(process.env.JAWSDB_URL){
@@ -20,6 +21,20 @@ connection.connect(function(err){
     return
   }
   console.log("connected as id " + connection.threadId);
+});
+
+fs.readFile('/Users/paulthomas/Documents/programming/burger/backup.sql', 'utf-8', (err, data) => {
+  if (err) throw err;
+
+  const sqlCommands = data.split(';').map(command => command.trim()).filter(command => command);
+
+
+  sqlCommands.forEach((sqlCommand) => {
+    connection.query(sqlCommand, (err, results) => {
+      if(err) throw err;
+      console.log('SQL Command executed:', results);
+    });
+  });
 });
 
 module.exports = connection;
