@@ -1,21 +1,36 @@
 <div id="main">
-  <h1>Burgers!!</h1>
+  <div class="header-container">
+    <h1>Burgers!!</h1>
+  </div> 
+
   <form>
-    <label for="burgerForm"></label>Add a burger<br>
+    <label for="burgerForm">Add a burger</label><br>
     <input type="text" id="burgerForm" name="burgerForm">
     <button id="submit">Add</button><br>
   </form>
 
-  {{#each burger_data}}
-  {{#if devoured}}
-  <div style="float: right;">
-    <h4 class="burger" id={{id}} devoured={{devoured}}>{{burger}}</h4>
-    <button id={{id}} class='delete'>X</button>
+
+  <div id="uneatenColumn">
+    <h2>Uneaten Burgers</h2>
+    <label for="burgerEat">(Click to eat a burger)</label><br>
+    {{#each burger_data}}
+      {{#unless devoured}}
+        <div class="burger-container">
+          <h4 class="burger" id={{id}} devoured={{devoured}}>{{burger}}</h4>
+        </div>
+      {{/unless}}
+    {{/each}}
+  
+    <h2>Eaten Burgers</h2>
+    <label for="burgerEat">(Click to make another or delete)</label><br>
+    {{#each burger_data}}
+      {{#if devoured}}
+        <div class="burger-container devoured">
+          <h4 class="burger" id={{id}} devoured={{devoured}}>{{burger}}</h4>
+          <button id={{id}} class='delete'>X</button>
+        </div>
+      {{/if}}
+    {{/each}}
   </div>
-  {{else}}
-  <div id={{id}} devoured={{devoured}} class="burger" style="float: left;">
-    <h4>{{burger}}</h4>
-  </div>
-  {{/if}}
-  {{/each}}
+   
 </div>
