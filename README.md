@@ -30,7 +30,7 @@ npm i
 
 ## Usage
 
-Download to you local machine or check a verison deployed on heroku https://afternoon-tor-64917.herokuapp.com/
+Download to you local machine or check a verison deployed on https://burger-d1795d4bf236.herokuapp.com/
 
 ## License
 
