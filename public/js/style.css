@@ -1,45 +1,73 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 #main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-around;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f8f8f8;
+  position: relative;
+  background-image: url("burgertime.png");
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+  color: #333;
+}
+
+.columns-container {
+  display: flex;
+  width: 100%;
 }
 
 .column {
   flex: 1;
+  padding: 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: .9;
   margin: 0 10px;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
 .header-container {
   text-align: center;
-  margin-bottom: 20px; /* Adjust margin as needed */
-}
-h1 {
-  text-align: center;
-  color: #333;
-  margin-top: 20px; /* Adjust the margin-top as needed */
+  margin-bottom: 20px;
 }
 
 form {
   margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 input {
-  width: calc(100% - 20px);
-  padding: 8px;
-  margin-bottom: 10px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button {
@@ -47,20 +75,22 @@ button {
   background-color: #4caf50;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .burger-container {
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .burger {
   background-color: #4caf50;
   color: white;
-  padding: 10px;
+  padding: 12px;
   margin: 0;
+  border-radius: 4px;
 }
 
 .devoured {
@@ -72,9 +102,7 @@ button {
   background-color: #f44336;
   color: white;
   border: none;
-  padding: 5px;
+  padding: 8px;
   cursor: pointer;
-}
-.content-container {
-  width: 100%; /* Adjust the width as needed */
+  border-radius: 4px;
 }
