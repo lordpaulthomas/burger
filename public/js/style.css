@@ -2,10 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("burgertime.png");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  background: linear-gradient(to right, #40E0D0, #000000)
 }
 
 #main {
